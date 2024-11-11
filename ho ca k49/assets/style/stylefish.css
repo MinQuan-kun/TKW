@@ -1,0 +1,142 @@
+#shark {
+    left: 100px;bottom: 100px;
+    width: 200px;height: 147px;
+    position: absolute;
+    animation-name: shark;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    transform: scaleX(1);
+}
+@keyframes shark {
+    0%   {left:200px;   top:400px;}
+    10   {left:400px;   top:400px;transform: rotateY(0deg);}
+    20%  {left:600px;   top:400px;transform: rotateY(0deg);}
+    30%  {left:800px;   top:400px;transform: rotateY(0deg);}
+    40%  {left:1000px;  top:400px;transform: rotateY(0deg);}
+    60%  {left:1000px;  top:400px;transform: rotateY(180deg);}
+    70%  {left:800px;   top:400px;transform: rotateY(180deg);}
+    80%  {left:600px;   top:400px;transform: rotateY(180deg);}
+    90%  {left:400px;   top:400px;transform: rotateY(180deg);}
+    95%  {left:200px;   top:400px;transform: rotateY(0deg);}    
+    100% {left:200px;   top:400px;transform: rotateY(0deg);}  
+} 
+/* #background{
+    height: 100vh;
+    position: relative;
+} */
+#turtle {
+    left: 100px;bottom: 100px;
+    width: 200px;height: 147px;
+    position: absolute;
+    animation-name: turtle;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    transform: scaleX(1);
+}
+@keyframes turtle {
+    0%   {left:0px; top:700px;transform: rotateY(0deg);}
+    17.5%  {left:400px; top:700px; transform: rotateY(0deg);}
+    35%  {left:700px; top:700px; transform: rotateY(0deg);}
+    45%  {left:900px; top:700px; transform: rotateY(0deg);}
+    70%  {left:700px; top:700px; transform: rotateY(0deg);}
+    85% {left:400px; top:700px; transform: rotateY(0deg);}
+    100% {left:0px; top:700px; transform: rotateY(0deg);}
+}
+
+#fish {
+    left: 100px;bottom: 100px;
+    width: 200px;height: 147px;
+    position: absolute;
+    animation-name: fish;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    transform: scaleX(1);
+}
+@keyframes fish {
+    0% {left: 800px;; top: 150px;; transform: rotate(0deg);}
+    20% {left: 800px;; top: 70px;; transform: rotate(0deg);}
+    30% {left: 800px;; top: 70px;; transform: rotate(0deg);}
+    60% {left: 800px;; top: -10px;; transform: rotate(0deg);}
+    70% {left: 800px;; top: -10px;; transform: rotate(0deg);}
+    90% {left: 800px;; top: 150px;; transform: rotate(0deg);}
+    100% {left: 800px;; top: 150px;; transform: rotate(0deg);}
+}
+
+#slime1{
+    right:0px; top:400px;
+	width: 50%; height: 40%;
+	position: absolute;
+	animation-name: slime1;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: running;	
+	transform:scaleX(1)
+}
+@keyframes slime1
+{
+    0%   {right:0px; top:100px;transform: rotateY(180deg);}
+	17.5%  {right:800px; top:100px; transform: rotateY(180deg);}
+	35%  {right:1600px; top:100px; transform: rotateY(180deg);}
+	45%  {right:1700px; top:100px; transform: rotateY(0deg);}
+	70%  {right:700px; top:100px; transform: rotateY(0deg);}
+	85% {right:200px; top:100px; transform: rotateY(0deg);}
+	90% {right:100px; top:100px; transform: rotateY(0deg);}
+	100% {right:0px; top:100px; transform: rotateY(180deg);}
+}
+#slime2{
+	top:400px;
+	right:-600px;
+	width: 50%; height: 40%;
+	position: absolute;
+	animation-name: slime2;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: running;	
+}
+@keyframes slime2
+{
+	0%   {right:800;top:200px;}
+	17.5% {right:800top:100px;}
+	35%  {right:800top:50px;}
+	45%  {right:800top:20px;}
+	70%  {right:800top:50px;}
+	85% {right:800top:20px;}
+	90% {right:800top:100px;}
+	100% {right:800top:200px;}
+}
+#rua{
+    left:100px; top:400px;
+	width: 100px; height: 147px;
+	position: absolute;
+	animation-name: rua;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: running;	
+	transform:scaleX(1)
+    
+}
+@keyframes rua {
+    0%   {left:500px; top:200px;transform: rotateY(180deg);}
+	17.5%  {left:800px; top:300px; transform: rotateY(180deg);}
+	35%  {left:1600px; top:400px; transform: rotateY(180deg);}
+	45%  {left:1700px; top:500px; transform: rotateY(0deg);}
+	70%  {left:700px; top:400px; transform: rotateY(0deg);}
+	85% {left:200px; top:300px; transform: rotateY(0deg);}
+	90% {left:100px; top:200px; transform: rotateY(0deg);}
+	100% {left:500px; top:200px; transform: rotateY(180deg);}
+}
+#background_image{
+    width: 100%;
+}
+#background_image img{
+    width: 100%;
+}

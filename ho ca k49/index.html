@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Hồ Cá CSS3</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./assets/style/stylefish.css">
+</head>
+<body>
+
+<div id="background">
+	<div id="background_image"><img src="./assets/imagefish/BACKGROUNDSEA.jpg"></div>
+	<audio src=""> </audio>
+    <div id="turtle"><img src="./assets/imagefish/00dc147f7c7f7afe7ef15ca5c8fcde24.gif"; width="298" height="149"></div>
+	<div id="shark"><img src="./assets/imagefish/SHARK.png";></div>
+	<div id="fish"><img src="./assets/imagefish/1106913_c0371.gif";></div>
+  <div id="rua"><img src="./assets/imagefish/ZKZl.gif";></div>
+  <div id="slime1"><img src="./assets/imagefish/8iGEz7d8T.gif";></div>
+	<button id="bg1" class="btn_change">Change bg 1</button>
+    <button id="bg2" class="btn_change">Change bg 2</button>
+</div>
+<script src="./JAVASCRIPT/main.js"></script>
+<div class="music-player">
+    <audio id="audio" src="audio.mp3"></audio>
+    <button id="play-btn">Play</button>
+  </div>
+
+  <script >
+    var audio = document.getElementById('audio');
+var playBtn = document.getElementById('play-btn');
+
+playBtn.addEventListener('click', function() {
+  if (audio.paused) {
+    audio.play();
+    playBtn.textContent = "Pause";
+  } else {
+    audio.pause();
+    playBtn.textContent = "Play";
+  }
+});
+  </script>
+</body>
+</html>
