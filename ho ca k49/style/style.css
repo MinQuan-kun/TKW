@@ -1,0 +1,39 @@
+#bg_image {
+	background-image: url("assest/bg2.jpg");
+	background-position: 100%;
+}
+#Shark 
+{
+	width: 200px; 
+	height: 147px;
+	position: relative;
+    animation: Shark 10s linear 0s infinite alternate;
+}
+@keyframes Shark
+{
+	0%   {left:100px; top:400px}
+	1%   {left:100px; top:400px}
+	20%  {left:700px; top:400px}
+	40%  {left:700px; transform:scaleX(-1)}
+	60%  {left:700px; top:100px; transform:scaleX(-1)}
+	90%  {left:500px; top:100px; transform:scaleX(-1)}
+	100% {left:500px; top:400px; transform:scaleX(-1)}
+}
+#tien
+{
+	width: 200px; 
+	height: 147px;
+	position: absolute;
+	animation: tien 10s linear 0 infinite alternate;
+
+}
+@keyframes tien
+{
+	0%   {left:100px; top: 400px}
+	1%   {left:100px; top: 400px}
+	20%  {left:700px; top: 400px}
+	40%  {left:700px; transform:scaleX(-1)}
+	60%  {left:700px; top: 400px; transform:scaleX(-1)}
+	90%  {left:500px; top:100px; transform:scaleX(-1)}
+	100% {left:500px; top:400px; transform:scaleX(-1)}
+}
