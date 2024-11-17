@@ -1,0 +1,123 @@
+
+    /*Giao diện cho trang nhập tên */
+    body 
+    {
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(135deg, #ff9a9e 10%, #fecfef 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+    }
+    /* Phần hiển thị nhập tên */
+    #nameInputSection 
+    {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease;
+      /* Đặt chiều rộng cho box */
+      width: 250px; 
+    }
+
+    /* Phần người dùng nhập */
+    input 
+    {
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
+      width: 100%;
+      transition: 0.3s ease;
+      outline: none;
+    }
+
+    input:focus 
+    {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Nút gửi */
+    button 
+    {
+      border: none;
+      border-radius: 30px;
+      padding: 10px 30px;
+      background: linear-gradient(45deg, #ff512f, #dd2476);
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      outline: none;
+    }
+
+    button:hover 
+    {
+      transform: translateY(-3px);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hiệu ứng cho input nếu trống */
+    .shake 
+    {
+      animation: shake 0.5s;
+    }
+
+    @keyframes shake 
+    {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(5px); }
+      50% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+      100% { transform: translateX(0); }
+    }
+  
+    #gif1
+    {
+    padding: 0px;
+    width: 200px; /* Chiều rộng của GIF */
+    
+    }
+    #gif2
+    {
+      padding: 0px;
+      width: 40px; /* Chiều rộng của GIF */
+    }
+    .content {
+      position: relative;
+      z-index: 3;
+    }
+  
+  #bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .8;
+    height: 100vh;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-image: url(../img/hihi.jpg);
+    background-size: cover;
+    background-position: 50%;
+    -webkit-filter: blur(4px);
+  }
+  
+  #floatingGif {
+    position: fixed;
+    bottom: 20px; /* Khoảng cách từ dưới lên */
+    right: 20px;  /* Khoảng cách từ phải sang */
+    width: 150px; /* Chiều rộng của GIF */
+    z-index: 1000; /* Đảm bảo ảnh luôn nằm trên cùng */
+    opacity: 0.9;  /* Làm mờ nhẹ nếu muốn */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  #floatingGif:hover {
+    opacity: 1; /* Tăng độ rõ khi di chuột */
+  }

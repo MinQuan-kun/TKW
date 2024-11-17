@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Suprise</title>
+    <!-- Liên kết tới tệp CSS -->
+    <!-- <link rel ="stylesheet" href ="css/spinload.css"> -->
+    <link rel ="stylesheet" href="css/suprise.css">
+
+</head>
+<body>
+    <!-- <div class="loading-container">
+        <div class="loading-text">Chức năng này đang tiến hành thực hiện, vui lòng quay lại sau..</div>
+        <div class="spinner"></div>
+    </div> -->
+    <div class="box" id="giftBox"> <!-- Thêm id cho hộp quà -->
+        <div class="box-tape">
+            <div class="box-tape-left"></div>
+            <div class="box-tape-right"></div>
+            <div class="box-tape-center"></div>
+        </div>
+        <div class="box-gifts">
+            <div class="box-gifts-shadow"></div>
+        </div>
+        <div class="box-gift"></div>
+        <div class="box-star box-star-1"></div>
+        <div class="box-star box-star-2"></div>
+        <div class="box-star box-star-3"></div>
+        <div class="box-star box-star-4"></div>
+        <div class="box-star box-star-5"></div>
+    </div>
+     <!-- Nút mở video -->
+     <button id="openVideoButton">Nhận quà</button>
+     <!-- Nền mờ khi video pop-up mở -->
+     <div id="overlay"></div>
+     <!-- Khung video pop-up -->
+     <div id="videoModal">
+         <video id="videoPlayer" width="100%" controls>
+             <source src="video/trolltroll.mp4" type="video/mp4">
+             Trình duyệt của bạn không hỗ trợ video.
+         </video>
+     </div>
+    <!-- Liên kết tới tệp JS -->    
+    <script src="js/suprise.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</body>
+</html>

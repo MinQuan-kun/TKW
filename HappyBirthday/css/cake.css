@@ -1,0 +1,660 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+}
+#bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .8;
+    height: 100vh;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-image: url(../img/hihi.jpg);
+    background-size: cover;
+    background-position: 50%;
+    -webkit-filter: blur(4px);
+}
+
+#pic{
+    Top: 90px;
+    padding: 0px;
+    width: 100px; /* Chiều rộng của GIF */
+}
+.cake {
+    text-align: center;
+    position: relative;
+}
+
+.cake-top {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    animation: drop 1s ease-in-out forwards;
+    animation-delay: 2.5s; /* Đặt độ trễ của bánh và nến */
+    transform: translateY(-1000px);
+}
+
+/* Cây nến hình số 1 */
+.candle1 {
+    width: 7px;
+    height: 70px;
+    bottom: -20px;
+    background-color: #ffb6c1;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 5px; /* Đẩy lên một chút */
+    animation-delay: 3.0s; /* Nến sẽ rơi sau cùng */
+}
+
+/* Cây nến hình số 9*/
+.candle9 {
+    position: relative;
+    width: 30px;
+    height: 60px;
+    bottom: -15px;
+    background-color: transparent;
+    border: 10px solid #ffb6c1;
+    border-radius: 60%;
+    clip-path: ellipse(50% 100% at 50% 100%);
+    animation-delay: 3.0s; /* Nến sẽ rơi sau cùng */
+}
+
+/* Phần thân của số 9 */
+.candle9 .stem {
+    width: 20px;
+    height: 45px;
+    background-color: #ffb6c1;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    border-radius: 5px;
+}
+
+/* Phần ngọn lửa cho cả hai cây nến */
+.flame1 {
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background-color: #fbcb0c;
+    top: -20px; /* Đưa ngọn lửa lên trên nến */
+    left: 0px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: flicker 1s infinite alternate;
+}
+
+.ballon{
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background-color: #fbcb0c;
+    top: -20px; /* Đưa ngọn lửa lên trên nến */
+    left: 0px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; transform: translateY(-2px); }
+    100% { opacity: 0.7; transform: translateY(2px); }
+}
+
+.cake-layer {
+    height: 45px;
+    margin: 0 auto;
+    border-radius: 5px;
+    animation: drop 1.5s ease-in-out forwards;
+    transform: translateY(-1000px);
+}
+
+/* Lớp bánh thứ nhất (tầng 3) */
+.layer1 {
+    background-color: #d9a4f5;
+    width: 160px;
+    animation-delay: 1.5s; /* Tầng 3 rơi trước */
+}
+
+/* Lớp bánh thứ hai (tầng 2) */
+.layer2 {
+    background-color: #d9a4f5;
+    width: 180px;
+    animation-delay: 1s; /* Tầng 2 rơi sau */
+}
+
+/* Lớp bánh thứ ba (tầng 1) */
+.layer3 {
+    background-color: #d9a4f5;
+    width: 200px;
+    animation-delay: 0.5s; /* Tầng 1 rơi cuối cùng */
+}
+
+@keyframes drop {
+    from { transform: translateY(-1000px); }
+    to { transform: translateY(0); }
+}
+
+.cream {
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    top: -5px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Hiệu ứng lượn sóng cho lớp kem */
+.cream::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-color: #ffffff;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: wave 2s infinite ease-in-out;
+}
+
+@keyframes wave {
+    0% { transform: translateX(-50%) translateY(-5px); }
+    50% { transform: translateX(-50%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Cập nhật cấu trúc tầng bánh */
+.layer1, .layer2, .layer3 {
+    position: relative;
+}
+
+.layer1 .cream { width: 160px; }
+.layer2 .cream { width: 180px; }
+.layer3 .cream { width: 200px; }
+
+
+.bow {
+    position: absolute;
+    width: 200px; /* Chiều rộng của nơ */
+    height: 8px; /* Chiều cao của nơ */
+    background-color: #f098c7; /* Màu sắc của nơ */
+    border-radius: 0px; /* Đường viền tròn cho nơ */
+    top: 20px; /* Vị trí trên bánh */
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg); /* Canh giữa nơ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng cho nơ */
+}
+.bow2 {
+    position: absolute;
+    width: 180px; /* Chiều rộng của nơ */
+    height: 8px; /* Chiều cao của nơ */
+    background-color: #f098c7; /* Màu sắc của nơ */
+    border-radius: 0px; /* Đường viền tròn cho nơ */
+    top: 20px; /* Vị trí trên bánh */
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg); /* Canh giữa nơ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng cho nơ */
+}
+.bow3 {
+    position: absolute;
+    width: 160px; /* Chiều rộng của nơ */
+    height: 8px; /* Chiều cao của nơ */
+    background-color: #f098c7; /* Màu sắc của nơ */
+    border-radius: 0px; /* Đường viền tròn cho nơ */
+    top: 20px; /* Vị trí trên bánh */
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg); /* Canh giữa nơ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng cho nơ */
+}
+
+.icing{
+    position: relative;
+}
+.icing>div{
+    background-color: #ffffff;
+    height: 10px;
+    width: 20px;
+    border-radius: 0 0 26px 26px;
+    position: absolute;
+}
+.icing>div:nth-child(1)
+{
+    left: 0px;
+}
+.icing>div:nth-child(2)
+{
+    left: 20px;
+}
+.icing>div:nth-child(3)
+{
+    left: 40px;
+}
+
+.icing>div:nth-child(4)
+{
+    left: 60px;
+}
+.icing>div:nth-child(5)
+{
+    left: 80px;
+}
+.icing>div:nth-child(6)
+{
+    left: 100px;
+}
+.icing>div:nth-child(7)
+{
+    left: 120px;
+}
+.icing>div:nth-child(8)
+{
+    left: 140px;
+}
+.icing>div:nth-child(9)
+{
+    left: 160px;
+}
+.icing>div:nth-child(10)
+{
+    left: 180px;
+}
+
+.cherries>div
+{
+    background-color: #ff2e3a;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+}
+.cherries>div:nth-child(1)
+{
+    left: 30px;
+}
+.cherries>div:nth-child(2)
+{
+    left: 70px;
+}
+.cherries>div:nth-child(3)
+{
+    left: 110px;
+}
+.cherries>div:nth-child(4)
+{
+    left: 150px;
+}
+.cherries2>div
+{
+    background-color: #ff2e3a;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+}
+.cherries2>div:nth-child(1)
+{
+    left: 40px;
+}
+.cherries2>div:nth-child(2)
+{
+    left: 80px;
+}
+.cherries2>div:nth-child(3)
+{
+    left: 120px;
+}
+
+
+.plate {
+    position: relative;
+    width: 250px; /* Chiều rộng của dĩa */
+    height: 5px; /* Chiều cao của dĩa */
+    background-color: #d3d3d3; /* Màu sắc dĩa */
+    border-radius: 10px; /* Đường viền dĩa tròn */
+    top: -5px; /* Đặt dĩa phía dưới bánh */
+    margin: 0 auto; /* Canh giữa dĩa */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Hiệu ứng bóng cho dĩa */
+}
+
+@keyframes float {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+
+.cake-image2 {
+    position: absolute;
+    top: -150px; /* Đặt vị trí ảnh lên trên bánh */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; /* Đặt kích thước ảnh */
+    height: auto; /* Giữ tỉ lệ ảnh */
+}
+
+.textB-image {
+    position: absolute;
+    top: -230px; /* Đặt vị trí ảnh lên trên bánh */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; /* Đặt kích thước ảnh */
+    height: auto; /* Giữ tỉ lệ ảnh */
+}
+
+.cake-image{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -70px;
+    width: 350px; /* Đặt kích thước ảnh */
+    height: auto; /* Giữ tỉ lệ ảnh */
+}
+
+/* knot Container */
+.knot {
+    position: absolute;
+    top: 10px; /* Adjust position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    animation: bloom 2s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+/* knot Petals */
+.knot::before, .knot::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff7e84;
+    border-radius: 50%;
+    top: 5px;
+}
+
+/* Left Petal */
+.knot::before {
+    transform: rotate(-45deg);
+    left: -10px;
+}
+
+/* Right Petal */
+.knot::after {
+    transform: rotate(45deg);
+    right: -9px;
+}
+
+/* knot Center */
+.knot-center {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #ff7e84;
+    border-radius: 50%;
+    top: 9px;
+    left: 14px;
+    transform: translateX(-50%);
+}
+
+/* Bloom Animation */
+@keyframes bloom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/*Tạo kiểu button*/
+button
+{
+    padding: 5px 10px; /* Kích thước của button */
+    border: unset;
+    border-radius: 15px;
+    color: #ffffff;
+    z-index: 1;
+    background: #f09dc7;
+    position: relative;
+    font-family: 'robot';
+    font-weight: 1000;
+    font-size: 15px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    opacity: 0; /* Ban đầu ẩn */
+    animation: fadeIn 1s forwards 5s; /* Đặt hiệu ứng xuất hiện sau 10s */
+   }
+   button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #f898e4;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   button:hover {
+    color: #e8e8e8;
+   }
+   button:hover::before {
+    width: 100%;
+}
+#yes
+{
+    right: 10px;
+    background-color: #f09dc7; 
+}
+#no
+{
+    left: 10px;
+    background-color: #f09dc7; 
+}
+/* Hover cho #yes - chuyển sang xanh */
+#yes:hover {
+    background-color: #4caf50; /* Màu xanh */
+}
+
+#yes:hover::before {
+    background-color: #66bb6a; 
+}
+
+/* Hover cho #no - chuyển sang đỏ */
+#no:hover {
+    background-color: #f44336; /* Màu đỏ */
+}
+
+#no:hover::before {
+    background-color: #ef5350; 
+}
+
+/* Animation fadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Ban đầu ẩn */
+        transform: scale(0.5); /* Thu nhỏ */
+    }
+    100% {
+        opacity: 1; /* Cuối cùng hiển thị */
+        transform: scale(1); /* Kích thước bình thường */
+    }
+}
+
+
+/* Hoa */
+.flower {
+    display: grid;
+    grid-template-columns: 1em 1em;
+    position: absolute;
+    transition: grid-template-columns 0.8s ease;
+}
+
+.flower1 {
+    top: -12px;
+    left: -13px;
+    transform: rotate(5deg);
+}
+
+.flower2 {
+    bottom: -5px;
+    left: 8px;
+    transform: rotate(35deg);
+}
+
+.flower3 {
+    bottom: -15px;
+    transform: rotate(0deg);
+}
+
+.flower4 {
+    top: -14px;
+    transform: rotate(15deg);
+}
+
+.flower5 {
+    right: 11px;
+    top: -3px;
+    transform: rotate(25deg);
+}
+
+.flower6 {
+    right: -15px;
+    bottom: -15px;
+    transform: rotate(30deg);
+}
+
+.petal {
+    height: 1em;
+    width: 1em;
+    border-radius: 40% 70% / 7% 90%;
+    background: linear-gradient(#f5ea97, #f0ffc4);
+    border: 0.5px solid #fefec4;
+    z-index: 0;
+    transition: width 0.8s ease, height 0.8s ease;
+}
+
+.two {
+    transform: rotate(90deg);
+}
+
+.three {
+    transform: rotate(270deg);
+}
+
+.four {
+    transform: rotate(180deg);
+}
+
+/* Khi con trỏ di chuyển tới bất kỳ phần tử nào có lớp "flower" */
+.flower:hover {
+    grid-template-columns: 1.5em 1.5em;
+}
+
+.flower:hover .petal {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+/* Tạo animation cho từng "flower" khi hover */
+.flower1:hover {
+    animation: flower1 15s linear infinite;
+}
+
+.flower2:hover {
+    animation: flower2 13s linear infinite;
+}
+
+.flower3:hover {
+    animation: flower3 16s linear infinite;
+}
+
+.flower4:hover {
+    animation: flower4 17s linear infinite;
+}
+
+.flower5:hover {
+    animation: flower5 20s linear infinite;
+}
+
+.flower6:hover {
+    animation: flower6 15s linear infinite;
+}
+
+/* Các keyframes xoay cho từng "flower" */
+@keyframes flower1 {
+    0% { transform: rotate(5deg); }
+    100% { transform: rotate(365deg); }
+}
+
+@keyframes flower2 {
+    0% { transform: rotate(35deg); }
+    100% { transform: rotate(-325deg); }
+}
+
+@keyframes flower3 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes flower4 {
+    0% { transform: rotate(15deg); }
+    100% { transform: rotate(375deg); }
+}
+
+@keyframes flower5 {
+    0% { transform: rotate(25deg); }
+    100% { transform: rotate(-335deg); }
+}
+
+@keyframes flower6 {
+    0% { transform: rotate(30deg); }
+    100% { transform: rotate(390deg); }
+}
+
+/*Bong bóng*/
+.balloon-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    bottom: 120px;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.balloon-image {
+    position: absolute;
+    width: 80px;
+    animation: floatUp 8s ease-in infinite;
+}
+
+/* Vị trí ban đầu ngẫu nhiên và di chuyển lên */
+.balloon1 { left: 10%; animation-delay: 0s; }
+.balloon2 { left: 30%; animation-delay: 2s; }
+.balloon3 { left: 50%; animation-delay: 4s; }
+.balloon4 { left: 70%; animation-delay: 6s; }
+
+@keyframes floatUp {
+    0% { bottom: -100px; opacity: 0; transform: translateY(0); }
+    10% { opacity: 1; }
+    100% { bottom: 100vh; opacity: 0; transform: translateY(-200px); }
+}       

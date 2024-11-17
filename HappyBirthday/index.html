@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Đặt tên hiển thị trên tab -->
+    <title>Your name</title> 
+
+    <!-- Liên kết tới tệp CSS -->
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/spinload.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous" />
+  
+</head>
+<body>
+
+  <img src="img/cute-dancing.gif" id="floatingGif" alt="GIF">
+
+      <!-- Hình nền -->
+      <div id="bg"></div>
+
+      <!-- Hộp thoại nhập tên -->
+      <div class="container content" id="nameInputSection">
+        <img src="img/Happy_birthday.webp" id ="gif1" alt="icon">
+        <div class="input-group mb-3">
+          <input type="text" id="userName" placeholder="Họ tên đầy đủ" class="form-control" />
+        </div>
+
+      <div class="input-group mb-3">
+        <input type="text" id="pwd" placeholder="Ngày sinh nhật(4 số)" class="form-control" />
+      </div>
+
+        <!--Nút gửi-->
+      <div class="input-group">
+        <div class="input-group-append">
+          <button id="submitName" type="button" class="btn btn-primary">
+            Gửi
+          </button>
+          <img src="img/Hi.gif" id ="gif2" alt="icon">
+        </div>
+      </div>
+    </div>
+      <h6>Tính năng check robot :></H4>
+
+      <!-- Liên kết tới tệp JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+      <script src="./js/password.js" type="text/javascript"></script>
+</body>
+</html>
